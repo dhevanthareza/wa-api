@@ -7,7 +7,7 @@ const controllerLoader = require('./controller.loader')
 const middlewareLoader = require('./middleware.loader')
 const modelLoader = require('./model.loader')
 
-dotenv.config({ path: path.resolve(__dirname, '../../.env.example') })
+dotenv.config({ path: path.resolve(__dirname, '../../.env') })
 
 dotenv.config()
 moment.locale('id')
@@ -31,9 +31,9 @@ class App {
   settings() {
     this.app.set('host', '0.0.0.0')
     this.app.set('port', process.env.PORT || 8080)
-    this.app.set('views', path.join(__dirname, '../views'))
-    this.app.set('view engine', 'pug')
-    this.app.use('/assets', express.static('views/assets'))
+    // this.app.set('views', path.join(__dirname, '../views'))
+    // this.app.set('view engine', 'pug')
+    // this.app.use('/assets', express.static('views/assets'))
   }
 }
 const server = new App()
