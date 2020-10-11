@@ -25,6 +25,7 @@ class App {
     const whatsapp = await wa.create({
       qrFormat: 'webm',
       // useChrome: true,
+      ignoreDefaultArgs: ['--disable-extensions'],
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
