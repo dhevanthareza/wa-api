@@ -18,7 +18,7 @@ class App {
   constructor() {
     this.app = express()
     this.settings()
-    // middlewareLoader(this.app)
+    middlewareLoader(this.app)
   }
 
   async listen() {
