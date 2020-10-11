@@ -22,7 +22,13 @@ class App {
   }
 
   async listen() {
-    const whatsapp = await wa.create({qrFormat: 'webm'})
+    const whatsapp = await wa.create({
+      qrFormat: 'webm',
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+      ],
+    })
     whatsapp.onStateChanged((state)=>{
       console.log('statechanged', state)
       if(state==="CONFLICT" || state==="UNLAUNCHED") whatsapp.forceRefocus();
