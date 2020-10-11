@@ -24,7 +24,7 @@ class App {
   async listen() {
     const whatsapp = await wa.create({
       qrFormat: 'webm',
-      useChrome: true,
+      // useChrome: true,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
