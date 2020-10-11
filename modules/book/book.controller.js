@@ -1,5 +1,4 @@
 const Book = require('./book.model')
-const router = Router
 exports.get = async (req, res) => {
   const data = await Book.findAll();
   return res.json(data)

@@ -5,7 +5,7 @@ const moment = require('moment')
 const path = require('path')
 const controllerLoader = require('./controller.loader')
 const middlewareLoader = require('./middleware.loader')
-const modelLoader = require('./model.loader')
+const wa = require('@open-wa/wa-automate');
 
 dotenv.config({ path: path.resolve(__dirname, '../../.env') })
 
@@ -19,10 +19,22 @@ class App {
     this.app = express()
     this.settings()
     middlewareLoader(this.app)
-    controllerLoader(this.app)
   }
 
   async listen() {
+    const whatsapp = await wa.create({qrFormat: 'webm'})
+    whatsapp.onStateChanged((state)=>{
+      console.log('statechanged', state)
+      if(state==="CONFLICT" || state==="UNLAUNCHED") whatsapp.forceRefocus();
+  
+      if(state==='UNPAIRED') whatsapp.forceRefocus()
+    });
+    this.app.use((req,res,next) => {
+      req.whatsapp = whatsapp
+      req.tes = "sadsa"
+      next()
+    })
+    controllerLoader(this.app)
     this.app.listen(this.app.get('port'), () => {
       console.log(`${chalk.green('✓')} server started at http://localhost:${this.app.get('port')}`)
     })
