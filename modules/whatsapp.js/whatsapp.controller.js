@@ -8,8 +8,8 @@ WhatsAppController.post(
     const payload = req.body
     console.log("==============SENDING MESSAGE======================")
     console.log(payload)
+    await req.whatsapp.sendMessage(`${req.body.phone}@c.us`, req.body.message);
     console.log("==================DONE====================")
-    await req.whatsapp.sendText(`${req.body.phone}@c.us`, req.body.message);
     res.json(payload)
   })
 );

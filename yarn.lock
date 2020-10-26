@@ -88,6 +88,11 @@
     futoin-hkdf "^1.3.1"
     mime-types "^2.1.26"
 
+"@pedroslopez/moduleraid@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@pedroslopez/moduleraid/-/moduleraid-4.1.0.tgz#468f7195fddc9f367e672ace9269f0698cf4c404"
+  integrity sha512-+2OYf1IDLhZlOY3QEwGfZJKfM/uPB3lw9zedl3eqEMtod73r1R7TUnmlh8S7hM8uLUcrWXMnJ9TrMbxXeV1pZg==
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
@@ -2069,6 +2074,11 @@ jsonify@~0.0.0:
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
   integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
 
+jsqr@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/jsqr/-/jsqr-1.3.1.tgz#515a766e58b00c80142f3a2dc4b8751100ceedcf"
+  integrity sha512-zCTP6Qd/WwjrpuHFkJuXc5opRdKprUr7eI7+JCCtcetThJt45qptu82MWQ+eET+FtDrMo7+BYjo3iD0XIq1L9Q==
+
 keyv@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-3.0.0.tgz#44923ba39e68b12a7cec7df6c3268c031f2ef373"
@@ -2347,6 +2357,11 @@ mime@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
   integrity sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==
+
+mime@^2.4.5:
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.6.tgz#e5b407c90db442f2beb5b162373d07b69affa4d1"
+  integrity sha512-RZKhC3EmpBchfTGBVb8fb+RL2cWyw/32lshnsETttkBAyAUXSGHxbEJWWRXc751DrIxG1q04b8QwMbAwkRPpUA==
 
 mimer@1.1.0:
   version "1.1.0"
@@ -4053,6 +4068,16 @@ vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
+
+whatsapp-web.js@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/whatsapp-web.js/-/whatsapp-web.js-1.10.0.tgz#65846534405e6c0e028de0407ddaab4240257525"
+  integrity sha512-1pljtRuF9fxDdqO8A9jGnPT3cGzYylwZRxE46xE3tt9V6UjIAyaI4Hgc5GaHqhLkaJS26V7imNTlNJsDFZ+/7Q==
+  dependencies:
+    "@pedroslopez/moduleraid" "^4.1.0"
+    jsqr "^1.3.1"
+    mime "^2.4.5"
+    puppeteer "^5.2.1"
 
 which-module@^2.0.0:
   version "2.0.0"
