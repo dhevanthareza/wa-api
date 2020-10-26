@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/dhevanthareza/node-js-starter#readme",
   "dependencies": {
-    "@open-wa/wa-automate": "^2.0.31",
     "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
     "compression": "^1.7.4",
