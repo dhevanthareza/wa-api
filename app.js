@@ -89,7 +89,7 @@ class App {
 
   settings() {
     this.app.set("host", "0.0.0.0");
-    this.app.set("port", process.env.PORT || 4000);
+    this.app.set("port", process.env.PORT || 3002);
     // this.app.set('views', path.join(__dirname, '../views'))
     // this.app.set('view engine', 'pug')
     // this.app.use('/assets', express.static('views/assets'))
