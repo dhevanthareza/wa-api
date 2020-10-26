@@ -45,7 +45,7 @@ class App {
       sessionData = require(SESSION_FILE_PATH);
     }
     const client = new Client({
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      puppeteer: {args: ["--no-sandbox", "--disable-setuid-sandbox"]},
       session: sessionData,
     });
     client.on("qr", (qr) => {
