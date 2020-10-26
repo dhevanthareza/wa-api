@@ -7,7 +7,7 @@ const controllerLoader = require("./controller.loader");
 const middlewareLoader = require("./middleware.loader");
 const { Client } = require("whatsapp-web.js");
 const fs = require("fs");
-const qrcode = require('qrcode-terminal');
+const qrcode = require("qrcode-terminal");
 dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
 dotenv.config();
@@ -38,18 +38,19 @@ class App {
 
     //   if(state==='UNPAIRED') whatsapp.forceRefocus()
     // });
-    console.log('===================GETTING READY======================')
+    console.log("===================GETTING READY======================");
     const SESSION_FILE_PATH = "./session.json";
     let sessionData;
     if (fs.existsSync(SESSION_FILE_PATH)) {
       sessionData = require(SESSION_FILE_PATH);
     }
     const client = new Client({
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
       session: sessionData,
     });
     client.on("qr", (qr) => {
       console.log("QR RECEIVED", qr);
-      qrcode.generate(qr, {small: true});
+      qrcode.generate(qr, { small: true });
     });
     client.on("authenticated", (session) => {
       console.log(
@@ -62,13 +63,13 @@ class App {
         }
       });
     });
-    client.on('change_state', (state) => {
-      console.log(state)
-      if(state === 'UNPAIRED' || state === 'CONFLICT') {
-        console.log("UNPAIRED")``
-        client.initialize()
+    client.on("change_state", (state) => {
+      console.log(state);
+      if (state === "UNPAIRED" || state === "CONFLICT") {
+        console.log("UNPAIRED")``;
+        client.initialize();
       }
-    })
+    });
     client.on("ready", () => {
       console.log("===================WA READY==========================");
     });
