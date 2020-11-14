@@ -45,7 +45,7 @@ class App {
       sessionData = require(SESSION_FILE_PATH);
     }
     const client = new Client({
-      puppeteer: {args: ["--no-sandbox", "--disable-setuid-sandbox"]},
+      puppeteer: { args: ["--no-sandbox", "--disable-setuid-sandbox"] },
       session: sessionData,
     });
     client.on("qr", (qr) => {
@@ -79,6 +79,14 @@ class App {
       next();
     });
     controllerLoader(this.app);
+    this.app.use(function (err, req, res, next) {
+      // All errors from async & non-async route above will be handled here
+      console.log('======ERROR===============')
+      res.json({
+        success:  false,
+        messge: 'ERROR'
+      });
+    });
     this.app.listen(this.app.get("port"), () => {
       console.log(
         `${chalk.green("✓")} server started at http://localhost:${this.app.get(
